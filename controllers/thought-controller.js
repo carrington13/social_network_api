@@ -1,6 +1,15 @@
+const { Thought, User } = require('../models');
+
+const thoughtController = {
 // Route /api/thoughts
 
 //Get all thoughts
+getAllThought(req, res) {
+  Thought.find({})
+    .populate({
+        path: 'reactions'
+    })    
+}
 
 // Get one thought by _id
 
@@ -15,3 +24,6 @@
 // Create a reaction stored in a single thoughts reactions array field
 
 // Delete to pull and remove a reaction by the reactions reactionId value
+}
+
+module.exports = thoughtController;
