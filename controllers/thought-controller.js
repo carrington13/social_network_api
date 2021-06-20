@@ -83,28 +83,25 @@ getAllThoughts(req, res) {
   },
 
 // Delete a thought by _id
-  deleteThoughtById({ params }, res) {
-    Thought.findOneAndDelete({ _id: params.thoughtId })
-      .then(dbThoughtData => {
-        if (!dbThoughtData) {
-          return res.status(404).json({ message: 'There is no thought with this id!' })
-        }
-        res.json(dbThoughtData);
-        return User.findOneAndUpdate(
-          { username: params.username },
-          { $pull: { thoughts: params.thoughtId } },
-          { new: true }
-        );
-      })
-      .then(dbUserData => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No User found with this id!' });
-          return;
-        }
-        res.json(dbUserData);
-      })
-      .catch(err => res.json(err));
-  },
+deleteThoughtById({ params }, res) {
+  Thought.findOneAndDelete({ _id: params.thoughtId })
+    .then(dbThoughtData => {
+      if (!dbThoughtData) {
+        return res.status(404).json({ message: 'There is no thought with this id!' })
+      }
+      return User.findOneAndUpdate(
+        { username: dbThoughtData.username },
+        { $pull: { thoughts: dbThoughtData._id } },
+        { new: true }
+      );
+    })
+    .then(dbUserData => {
+      if(!dbUserData) {
+        res.status(404).json({ message: 'No user found with this username!'})
+      }
+      res.json(dbUserData)})
+    .catch(err => res.json(err));
+},
 
     // Create a reaction
     addReaction({ params, body }, res) {
