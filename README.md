@@ -10,19 +10,19 @@
 
 
 ## Installation
-Use 'npm install' to install all dependencies.
-
+Use `npm install` to install all dependencies.
+If you do not have MongoDb already downloaded, please go ahead and do so.
 
 ## Usage
 
 ### Database
-Database should initialize upon establishing connection if it doesn't exist. 
+Database should initialize upon establishing connection if it doesn't exist if you have MongoDb downloaded. 
 
 ### Run Command
-Use 'node server' or 'npm start' from Command Line while inside the file directory to initialize server.
+Use node `npm start` from Command Line while inside the file directory to initialize server.
 
 ### Description
-A basic back-end for a social media app using Mongoose and Express. 
+A server for a social media app using Mongoose and Express. This is app only contains back-end code and is currently not attached to any front-end. This API uses CRUD routes for two models, User and Thoughts. You can create, update, get, and delete any users and users can post, edit, and delete "thoughts" to which users can also react to.
 
 ### Languages
 Node.js, Express.js, MongoDb, Mongoose, Insomnia Core
@@ -32,8 +32,9 @@ All tests are through Insomnia Core to test server routes
 
 ### Tutorials
 
-#### Full Walk-through
-![screenshot](./assets/videos/walkthrough.webp)
+#### Full Walk-through Video
+Click [here](https://drive.google.com/file/d/15dmekPlOHjI7BKJFaVXFVKsIUsd_UHzX/view) to view a visual tutorial of how the app works.
+
 
 ### Questions
 ##### GitHub
@@ -46,10 +47,6 @@ caseyarrington13@gmail.com
 By: Casey Arrington
 
 [License Badges and Links](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
-
-[Video to WEBP converter](https://www.onlineconverter.com/video-to-webp)
-
-
 
 ## License
 Copyright 2021 Casey Arrington
