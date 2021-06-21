@@ -147,26 +147,3 @@ deleteThoughtById({ params }, res) {
 
 
 module.exports = thoughtController;
-
-// Get all thoughts, regardless of user
-
-// Route: /api/thoughts/
-  // POST Create a thought
-  
-  // GET Get one thought by id
-    // Include reactions
-
-// Route: /api/thoughts/:thoughtId
-
-  // GET Get thoughts by user
-    // Include reactions on thoughts
-
-  // DELETE Delete a thought
-
-  // POST/UPDATE Create a reaction on a thought
-
-// Route: /api/thoughts/:thoughtId/:reactionId
-
-  // PUT Update a reaction on a thought
-
-  // DELETE Delete a reaction on a thought
